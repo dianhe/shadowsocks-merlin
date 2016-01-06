@@ -1,0 +1,14 @@
+#!/bin/sh
+
+CONFIGFILE="/opt/etc/shadowsocks/config.json"
+PIDFILE="/var/run/ssserver.pid"
+LISTEN_IFACE="eth0"
+ENABLED=yes
+PROCS=ss-server
+ARGS="-c $CONFIGFILE -f $PIDFILE -i $LISTEN_IFACE"
+PREARGS=""
+DESC=$PROCS
+PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+. /opt/etc/init.d/rc.func
+
